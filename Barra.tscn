@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Barra.gd" type="Script" id=1]
+[ext_resource path="res://assets/barra_recipiente.png" type="Texture" id=2]
+[ext_resource path="res://assets/barra.png" type="Texture" id=3]
+[ext_resource path="res://assets/sc.png" type="Texture" id=4]
+
+[node name="Barra" type="Node2D"]
+position = Vector2( 270.75, -7.62939e-006 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+z_index = 2
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Marcador" type="Sprite" parent="Sprite"]
+position = Vector2( 8.39941, 0.930939 )
+scale = Vector2( 1, 1.47087 )
+z_index = -1
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 0, 23 )
+
+[node name="quadradinho" type="Sprite" parent="Sprite"]
+position = Vector2( 53.1445, 6.61907 )
+scale = Vector2( 0.00603556, 0.139817 )
+z_index = -1
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Button" type="Button" parent="."]
+margin_left = 183.0
+margin_top = 114.0
+margin_right = 251.0
+margin_bottom = 165.0
+text = "parar"
+
+[node name="pontos" type="Node2D" parent="."]
+
+[node name="Position2D11" type="Position2D" parent="pontos"]
+position = Vector2( 56.8575, 17.1475 )
+
+[node name="Position2D12" type="Position2D" parent="pontos"]
+position = Vector2( 92.9576, 15.3425 )
+
+[node name="Position2D13" type="Position2D" parent="pontos"]
+position = Vector2( 142.595, 16.245 )
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
